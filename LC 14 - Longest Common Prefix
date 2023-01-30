@@ -13,3 +13,29 @@ public:
         return strs[0].substr(0,ans);
     }
 };
+
+
+Sol 2 : 
+
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+        string prefix="";
+        string str1=strs[0];
+        for(int i=0;i<str1.length();i++)
+        {
+            int count=0;
+            for(int j=1;j<strs.size();j++)
+            {
+                if(str1[i]==strs[j][i])
+                {
+                    count++;
+                }
+            }
+            if(count==strs.size()-1)
+            prefix=prefix+str1[i];
+            else break;
+        }
+        return prefix;
+    }
+};
